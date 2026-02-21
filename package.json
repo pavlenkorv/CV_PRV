@@ -1,0 +1,14 @@
+{
+  "name": "ruslan-pavlenko-cv",
+  "version": "1.0.0",
+  "description": "CV of Ruslan Pavlenko — Project Manager / CEO / COO",
+  "homepage": "https://pavlenkorv.github.io/CV_PRV",
+  "private": true,
+  "scripts": {
+    "start": "npx serve . -p 3000",
+    "deploy": "echo 'Push to main branch — GitHub Actions will deploy automatically'"
+  },
+  "keywords": ["cv", "resume", "github-pages"],
+  "author": "Ruslan Pavlenko <pavlenko.rv@gmail.com>",
+  "license": "MIT"
+}

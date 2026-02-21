@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ruslan Pavlenko — CV</title>
+  <link rel="icon" href="assets/images/photo.jpg" type="image/jpeg" />
+  <style>
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --accent:   #1a4f7a;
+      --accent2:  #2d7fc1;
+      --light:    #eaf3fb;
+      --sidebar:  #1e3a54;
+      --text:     #1a1a2e;
+      --muted:    #5a6a7a;
+      --white:    #ffffff;
+      --border:   #d0dde8;
+      --tag-bg:   #deedf8;
+      --tag-text: #1a4f7a;
+      --radius:   6px;
+      --shadow:   0 4px 24px rgba(26,79,122,.13);
+    }
+    html { font-size: 15px; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #f0f4f8;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ─── Switcher Bar ─── */
+    .switcher-bar {
+      background: var(--sidebar);
+      color: var(--white);
+      padding: .6rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,.3);
+    }
+    .switcher-bar .label { font-size: .8rem; opacity: .7; text-transform: uppercase; letter-spacing: .05em; }
+    .sw-group { display: flex; align-items: center; gap: .5rem; }
+    .sw-btn {
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,.3);
+      color: rgba(255,255,255,.75);
+      padding: .3rem .85rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: .85rem;
+      transition: all .2s;
+      white-space: nowrap;
+    }
+    .sw-btn:hover { background: rgba(255,255,255,.15); color: var(--white); }
+    .sw-btn.active { background: var(--accent2); border-color: var(--accent2); color: var(--white); font-weight: 600; }
+    .print-btn {
+      margin-left: auto;
+      background: rgba(255,255,255,.12);
+      border: 1.5px solid rgba(255,255,255,.4);
+      color: var(--white);
+      padding: .3rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: .85rem;
+      transition: all .2s;
+    }
+    .print-btn:hover { background: rgba(255,255,255,.25); }
+
+    /* ─── Page Layout ─── */
+    .page {
+      max-width: 1080px;
+      margin: 2rem auto;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+    }
+
+    /* ─── Sidebar ─── */
+    .sidebar {
+      background: var(--sidebar);
+      color: var(--white);
+      padding: 2.5rem 1.6rem;
+    }
+    .photo-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    .photo-wrap img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255,255,255,.3);
+      box-shadow: 0 4px 16px rgba(0,0,0,.3);
+    }
+    .sidebar h1 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: .2rem;
+      letter-spacing: .02em;
+    }
+    .sidebar .contact { margin-top: 1.5rem; }
+    .sidebar .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      margin-bottom: .6rem;
+      font-size: .82rem;
+      opacity: .9;
+      word-break: break-all;
+    }
+    .contact-item .ci-icon { font-size: 1rem; flex-shrink: 0; margin-top: .05rem; }
+    .contact-item a { color: rgba(255,255,255,.85); text-decoration: none; }
+    .contact-item a:hover { color: var(--white); text-decoration: underline; }
+
+    .sidebar-section { margin-top: 1.8rem; }
+    .sidebar-section h3 {
+      font-size: .72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      opacity: .6;
+      margin-bottom: .8rem;
+      border-bottom: 1px solid rgba(255,255,255,.15);
+      padding-bottom: .4rem;
+    }
+
+    /* Languages */
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: .5rem;
+      font-size: .82rem;
+    }
+    .lang-name { font-weight: 500; }
+    .lang-level {
+      font-size: .74rem;
+      opacity: .7;
+      background: rgba(255,255,255,.1);
+      padding: .15rem .5rem;
+      border-radius: 10px;
+    }
+
+    /* Soft skills sidebar */
+    .soft-tags { display: flex; flex-wrap: wrap; gap: .35rem; }
+    .soft-tag {
+      font-size: .73rem;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      color: rgba(255,255,255,.9);
+      padding: .2rem .55rem;
+      border-radius: 10px;
+    }
+
+    /* Education sidebar */
+    .edu-item { margin-bottom: .9rem; font-size: .8rem; }
+    .edu-item .edu-years { font-size: .72rem; opacity: .6; margin-bottom: .1rem; }
+    .edu-item .edu-degree { font-weight: 500; opacity: .95; line-height: 1.4; }
+    .edu-item .edu-inst { opacity: .7; font-size: .75rem; margin-top: .1rem; }
+
+    /* ─── Main Content ─── */
+    .main {
+      padding: 2.5rem 2.2rem;
+      overflow: hidden;
+    }
+    .cv-title {
+      font-size: 1.05rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: .5rem;
+      line-height: 1.4;
+    }
+    .cv-summary {
+      font-size: .88rem;
+      color: var(--muted);
+      margin-bottom: .8rem;
+      line-height: 1.65;
+    }
+    .cv-seeking {
+      font-size: .84rem;
+      background: var(--light);
+      border-left: 3px solid var(--accent2);
+      padding: .75rem 1rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      color: var(--accent);
+      margin-bottom: 1.8rem;
+      line-height: 1.6;
+    }
+
+    /* Section headings */
+    .section { margin-bottom: 1.8rem; }
+    .section-title {
+      font-size: .78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--accent);
+      border-bottom: 2px solid var(--light);
+      padding-bottom: .4rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Experience */
+    .exp-item { margin-bottom: 1.4rem; }
+    .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: .2rem; gap: .5rem; }
+    .exp-title { font-size: .95rem; font-weight: 700; color: var(--text); }
+    .exp-period {
+      font-size: .78rem;
+      color: var(--muted);
+      white-space: nowrap;
+      background: var(--light);
+      padding: .15rem .6rem;
+      border-radius: 10px;
+    }
+    .exp-company { font-size: .84rem; color: var(--accent2); margin-bottom: .4rem; font-weight: 500; }
+    .exp-company a { color: var(--accent2); text-decoration: none; }
+    .exp-company a:hover { text-decoration: underline; }
+    .exp-items { padding-left: 1.1rem; }
+    .exp-items li { font-size: .84rem; color: var(--muted); margin-bottom: .25rem; line-height: 1.55; }
+
+    /* Achievements grid */
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .7rem;
+    }
+    .ach-card {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: .7rem .9rem;
+    }
+    .ach-icon { font-size: 1.2rem; margin-bottom: .2rem; }
+    .ach-label { font-size: .82rem; font-weight: 700; color: var(--text); margin-bottom: .1rem; line-height: 1.3; }
+    .ach-detail { font-size: .75rem; color: var(--muted); line-height: 1.4; }
+
+    /* Skills */
+    .skill-group { margin-bottom: .9rem; }
+    .skill-group-title { font-size: .78rem; font-weight: 600; color: var(--muted); margin-bottom: .4rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: .35rem; }
+    .tag {
+      font-size: .75rem;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      padding: .22rem .6rem;
+      border-radius: 10px;
+      font-weight: 500;
+    }
+
+    /* ─── Print ─── */
+    @media print {
+      body { background: white; }
+      .switcher-bar { display: none !important; }
+      .page {
+        margin: 0;
+        max-width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      .sidebar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .achievements-grid { grid-template-columns: repeat(3,1fr); }
+      .section { page-break-inside: avoid; }
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 720px) {
+      .page { grid-template-columns: 1fr; }
+      .achievements-grid { grid-template-columns: repeat(2,1fr); }
+      .switcher-bar { padding: .5rem 1rem; gap: 1rem; }
+      .main { padding: 1.5rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Switcher Bar -->
+<div class="switcher-bar">
+  <div class="sw-group">
+    <span class="label" id="lbl-position">Position</span>
+    <button class="sw-btn active" data-pos="pm"  onclick="setPos('pm')"  id="btn-pm">Project Manager</button>
+    <button class="sw-btn"        data-pos="coo" onclick="setPos('coo')" id="btn-coo">CEO / COO</button>
+  </div>
+  <div class="sw-group">
+    <span class="label">Lang</span>
+    <button class="sw-btn active" data-lang="en" onclick="setLang('en')" id="btn-en">🇬🇧 EN</button>
+    <button class="sw-btn"        data-lang="de" onclick="setLang('de')" id="btn-de">🇩🇪 DE</button>
+    <button class="sw-btn"        data-lang="ua" onclick="setLang('ua')" id="btn-ua">🇺🇦 UA</button>
+  </div>
+  <button class="print-btn" id="print-btn" onclick="window.print()">🖨️ Print / PDF</button>
+</div>
+
+<!-- CV Page -->
+<div class="page">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="photo-wrap">
+      <img src="assets/images/photo.jpg" alt="Ruslan Pavlenko" />
+    </div>
+    <h1 id="s-name">Ruslan Pavlenko</h1>
+
+    <div class="contact">
+      <div class="contact-item">
+        <span class="ci-icon">📍</span>
+        <span>44263, Dortmund, Germany</span>
+      </div>
+      <div class="contact-item">
+        <span class="ci-icon">📞</span>
+        <span>+38 067 483 22 43</span>
+      </div>
+      <div class="contact-item">
+        <span class="ci-icon">📧</span>
+        <a href="mailto:pavlenko.rv@gmail.com">pavlenko.rv@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <span class="ci-icon">💼</span>
+        <a href="https://linkedin.com/in/pavlenko-rv" target="_blank">linkedin.com/in/pavlenko-rv</a>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <h3 id="lbl-languages">Languages</h3>
+      <div id="s-languages"></div>
+    </div>
+
+    <div class="sidebar-section">
+      <h3 id="lbl-softskills">Soft Skills</h3>
+      <div class="soft-tags" id="s-soft"></div>
+    </div>
+
+    <div class="sidebar-section">
+      <h3 id="lbl-education">Education</h3>
+      <div id="s-education"></div>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+    <div class="cv-title"  id="m-title"></div>
+    <div class="cv-summary" id="m-summary"></div>
+    <div class="cv-seeking" id="m-seeking"></div>
+
+    <div class="section">
+      <div class="section-title" id="lbl-experience">Experience</div>
+      <div id="m-experience"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title" id="lbl-achievements">Key Achievements</div>
+      <div class="achievements-grid" id="m-achievements"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title" id="lbl-skills">Skills & Tools</div>
+      <div id="m-skills"></div>
+    </div>
+  </main>
+</div>
+
+<script src="src/metadata/metadata.js"></script>
+<script>
+  let currentPos  = 'pm';
+  let currentLang = 'en';
+
+  function setPos(pos) {
+    currentPos = pos;
+    document.querySelectorAll('[data-pos]').forEach(b => b.classList.toggle('active', b.dataset.pos === pos));
+    render();
+  }
+  function setLang(lang) {
+    currentLang = lang;
+    document.querySelectorAll('[data-lang]').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+    document.documentElement.lang = lang;
+    render();
+  }
+
+  function esc(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function render() {
+    const ui   = cvData.ui[currentLang];
+    const cv   = cvData[currentPos][currentLang];
+    const lang = cvData.languages[currentLang];
+    const edu  = cvData.education[currentLang];
+
+    // UI labels
+    document.getElementById('lbl-position').textContent   = ui.position;
+    document.getElementById('btn-pm').textContent         = '👔 ' + ui.pm;
+    document.getElementById('btn-coo').textContent        = '🏢 ' + ui.coo;
+    document.getElementById('lbl-languages').textContent  = ui.languages;
+    document.getElementById('lbl-softskills').textContent = ui.softSkills;
+    document.getElementById('lbl-education').textContent  = ui.education;
+    document.getElementById('lbl-experience').textContent = ui.experience;
+    document.getElementById('lbl-achievements').textContent = ui.achievements;
+    document.getElementById('lbl-skills').textContent     = ui.skills;
+    document.getElementById('print-btn').textContent      = '🖨️ ' + ui.print;
+    document.getElementById('s-name').textContent         = cvData.personal.name[currentLang];
+
+    // Header
+    document.title = cvData.personal.name[currentLang] + ' — CV';
+    document.getElementById('m-title').textContent   = cv.title;
+    document.getElementById('m-summary').textContent = cv.summary;
+    document.getElementById('m-seeking').textContent = cv.seeking;
+
+    // Languages
+    document.getElementById('s-languages').innerHTML = lang.map(l =>
+      `<div class="lang-item">
+        <span class="lang-name">${esc(l.lang)}</span>
+        <span class="lang-level">${esc(l.level)}</span>
+      </div>`
+    ).join('');
+
+    // Soft skills
+    document.getElementById('s-soft').innerHTML = cv.softSkills.map(s =>
+      `<span class="soft-tag">${esc(s)}</span>`
+    ).join('');
+
+    // Education
+    document.getElementById('s-education').innerHTML = edu.map(e =>
+      `<div class="edu-item">
+        <div class="edu-years">${esc(e.years)}</div>
+        <div class="edu-degree">${esc(e.degree)}</div>
+        <div class="edu-inst">${esc(e.institution)}</div>
+      </div>`
+    ).join('');
+
+    // Experience
+    document.getElementById('m-experience').innerHTML = cv.experience.map(e => {
+      const company = e.companyUrl
+        ? `<a href="${esc(e.companyUrl)}" target="_blank">${esc(e.company)}</a>`
+        : esc(e.company);
+      return `<div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-title">${esc(e.title)}</span>
+          <span class="exp-period">${esc(e.period)}</span>
+        </div>
+        <div class="exp-company">${company} · ${esc(e.location)}</div>
+        <ul class="exp-items">${e.items.map(i => `<li>${esc(i)}</li>`).join('')}</ul>
+      </div>`;
+    }).join('');
+
+    // Achievements
+    document.getElementById('m-achievements').innerHTML = cv.achievements.map(a =>
+      `<div class="ach-card">
+        <div class="ach-icon">${a.icon}</div>
+        <div class="ach-label">${esc(a.label)}</div>
+        <div class="ach-detail">${esc(a.detail)}</div>
+      </div>`
+    ).join('');
+
+    // Skills
+    document.getElementById('m-skills').innerHTML = cv.skillGroups.map(g =>
+      `<div class="skill-group">
+        <div class="skill-group-title">${esc(g.title)}</div>
+        <div class="tags">${g.skills.map(s => `<span class="tag">${esc(s)}</span>`).join('')}</div>
+      </div>`
+    ).join('');
+  }
+
+  // Read URL params on load
+  const params = new URLSearchParams(window.location.search);
+  if (['pm','coo'].includes(params.get('pos')))  currentPos  = params.get('pos');
+  if (['en','de','ua'].includes(params.get('lang'))) currentLang = params.get('lang');
+
+  // Sync button states
+  document.querySelectorAll('[data-pos]').forEach(b  => b.classList.toggle('active', b.dataset.pos  === currentPos));
+  document.querySelectorAll('[data-lang]').forEach(b => b.classList.toggle('active', b.dataset.lang === currentLang));
+
+  render();
+</script>
+</body>
+</html>
