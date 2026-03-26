@@ -12,19 +12,19 @@ const cvData = {
 
   languages: {
     en: [
-      { lang: "🇩🇪 German",    level: "B1 – Intermediate" },
+      { lang: "🇩🇪 German",    level: "B2 – Upper-Intermediate" },
       { lang: "🇬🇧 English",   level: "B2 – Upper-Intermediate" },
       { lang: "🇺🇦 Ukrainian", level: "C2 – Native" },
       { lang: "russian",       level: "C2 – Native" },
     ],
     de: [
-      { lang: "🇩🇪 Deutsch",    level: "B1 – Mittelstufe" },
+      { lang: "🇩🇪 Deutsch",    level: "B2 – Oberstufe" },
       { lang: "🇬🇧 Englisch",   level: "B2 – Oberstufe" },
       { lang: "🇺🇦 Ukrainisch", level: "C2 – Muttersprache" },
       { lang: "russisch",       level: "C2 – Muttersprache" },
     ],
     ua: [
-      { lang: "🇩🇪 Німецька",   level: "B1 – Середній" },
+      { lang: "🇩🇪 Німецька",   level: "B2 – Вище середнього" },
       { lang: "🇬🇧 Англійська", level: "B2 – Вище середнього" },
       { lang: "🇺🇦 Українська", level: "C2 – Рідна" },
       { lang: "російська",      level: "C2 – Вільне володіння" },
