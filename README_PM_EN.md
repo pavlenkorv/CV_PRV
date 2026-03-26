@@ -110,7 +110,7 @@
 
 | Language | Level |
 |---|---|
-| 🇩🇪 German | B1 – Intermediate |
+| 🇩🇪 German | B2 – Upper-Intermediate |
 | 🇬🇧 English | B2 – Upper-Intermediate |
 | 🇺🇦 Ukrainian | C2 – Native |
 | russian | C2 – Native |
