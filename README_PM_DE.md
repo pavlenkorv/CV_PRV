@@ -110,7 +110,7 @@
 
 | Sprache | Niveau |
 |---|---|
-| 🇩🇪 Deutsch | B1 – Mittelstufe |
+| 🇩🇪 Deutsch | B2 – Oberstufe |
 | 🇬🇧 Englisch | B2 – Oberstufe |
 | 🇺🇦 Ukrainisch | C2 – Muttersprache |
 | russisch | C2 – Muttersprache |
