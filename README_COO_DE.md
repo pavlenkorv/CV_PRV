@@ -13,7 +13,7 @@
 # Ruslan Pavlenko
 ### Führungskraft auf C-Level | Geschäftsführer (CEO/COO) | Experte für Geschäfts- und IT-Strategie
 
-📍 44263, Dortmund, Deutschland &nbsp;|&nbsp; 📞 +49 151 47 545 227 &nbsp;|&nbsp; 📧 [pavlenko.rv@gmail.com](mailto:pavlenko.rv@gmail.com) &nbsp;|&nbsp; 💼 [linkedin.com/in/pavlenko-rv](https://linkedin.com/in/pavlenko-rv)
+📍 44263, Dortmund, Deutschland &nbsp;|&nbsp; 📞 +49 151 47 545 227 / +38 067 483 22 43 &nbsp;|&nbsp; 📧 [pavlenko.rv@gmail.com](mailto:pavlenko.rv@gmail.com) &nbsp;|&nbsp; 💼 [linkedin.com/in/pavlenko-rv](https://linkedin.com/in/pavlenko-rv)
 
 ---
 
