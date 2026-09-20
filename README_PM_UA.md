@@ -13,7 +13,7 @@
 # Руслан Павленко
 ### Проєктний менеджер | Продуктовий менеджер | Керівник бізнес- та IT-стратегії
 
-📍 44263, Dortmund, Німеччина &nbsp;|&nbsp; 📞 +38 067 483 22 43 &nbsp;|&nbsp; 📧 [pavlenko.rv@gmail.com](mailto:pavlenko.rv@gmail.com) &nbsp;|&nbsp; 💼 [linkedin.com/in/pavlenko-rv](https://linkedin.com/in/pavlenko-rv)
+📍 44263, Dortmund, Німеччина &nbsp;|&nbsp; 📞 +38 067 483 22 43 / +49 151 47 545 227  &nbsp;|&nbsp; 📧 [pavlenko.rv@gmail.com](mailto:pavlenko.rv@gmail.com) &nbsp;|&nbsp; 💼 [linkedin.com/in/pavlenko-rv](https://linkedin.com/in/pavlenko-rv)
 
 ---
 
