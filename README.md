@@ -1,6 +1,6 @@
 # Ruslan Pavlenko — CV / Resume
 
-📍 44263, Dortmund, Germany &nbsp;|&nbsp; 📧 [pavlenko.rv@gmail.com](mailto:pavlenko.rv@gmail.com) &nbsp;|&nbsp; 💼 [linkedin.com/in/pavlenko-rv](https://linkedin.com/in/pavlenko-rv)
+📍 44263, Dortmund, Germany &nbsp;|+49 151 47 545 227 &nbsp; 📧 [pavlenko.rv@gmail.com](mailto:pavlenko.rv@gmail.com) &nbsp;|&nbsp; 💼 [linkedin.com/in/pavlenko-rv](https://linkedin.com/in/pavlenko-rv)
 
 ---
 
